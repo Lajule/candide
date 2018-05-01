@@ -9,6 +9,7 @@ export function code() {
     link: (scope, element, attrs, ngModel) => {
       let editor = CodeMirror.fromTextArea(element[0], {
         lineNumbers: true,
+        lineWrapping: true,
         mode: "application/json"
       });
 

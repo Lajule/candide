@@ -54,6 +54,9 @@ export function body($scope, $timeout, $sce, $filter, resume) {
     (newValue, oldValue) => {
       let pdf = new jsPDF("portrait", "mm", "a4");
 
+      pdf.setProperties({
+        title: $filter("title")(resume) + '.pdf'
+      });
       pdf.text(15, 15, resume.name);
       pdf.text(15, 30, resume.title);
       pdf.fromHTML(resume.skills, 15, 45, { width: 170 });
