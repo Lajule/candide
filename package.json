@@ -3,6 +3,7 @@
   "devDependencies": {
     "autoprefixer": "^8.4.1",
     "babel-preset-env": "^1.6.1",
+    "harp": "^0.25.0",
     "parcel-bundler": "^1.7.1",
     "postcss-import": "^11.1.0",
     "prettier": "^1.12.1"
@@ -18,7 +19,8 @@
     "tinymce": "^4.7.11",
     "wysiwyg": "^2.0.0"
   },
-  "scripts" : {
-    "start": "parcel serve -d app index.html"
+  "scripts": {
+    "postinstall": "parcel build -d app index.html",
+    "start": "harp server app --port $PORT"
   }
 }
