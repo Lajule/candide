@@ -1,6 +1,6 @@
-resumeService.$inject = [];
+resume.$inject = [];
 
-export function resumeService() {
+export function resume() {
   return {
     name: "",
     title: "",
