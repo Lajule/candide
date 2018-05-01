@@ -19,6 +19,6 @@
     "wysiwyg": "^2.0.0"
   },
   "scripts" : {
-    "postinstall": "parcel build -d app index.html"
+    "start": "parcel serve -d app index.html"
   }
 }
