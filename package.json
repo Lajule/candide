@@ -21,6 +21,6 @@
   },
   "scripts": {
     "postinstall": "parcel build -d app index.html",
-    "start": "harp server app 8080"
+    "start": "harp server app --port 8080"
   }
 }
