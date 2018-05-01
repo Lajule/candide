@@ -1,0 +1,13 @@
+{
+  "apps": [
+    {
+      "name": "candide",
+      "script": "serve",
+      "env": {
+        "PM2_SERVE_PATH": "app",
+        "PM2_SERVE_PORT": 8080
+      },
+      "instances": 4
+    }
+  ]
+}

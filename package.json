@@ -21,6 +21,6 @@
   },
   "scripts": {
     "postinstall": "parcel build -d app index.html",
-    "start": "pm2 serve app $PORT && pm2 logs all"
+    "start": "node ./node_modules/.bin/pm2-runtime start pm2.json"
   }
 }
