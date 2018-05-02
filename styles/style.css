@@ -9,18 +9,11 @@ body {
   display: flex;
   flex-direction: column;
   font-family: 'PT Sans', sans-serif;
-  background: black;
-  color: #FFDD00;
 }
 
 button,
 a {
   font-family: 'PT Serif', serif;
-}
-
-button,
-a {
-  color: #FFDD00;
 }
 
 button {
@@ -34,6 +27,7 @@ a {
   text-decoration: none;
   line-height: 1.15;
   margin: auto 0;
+  color: black;
 }
 
 button:focus,
@@ -71,13 +65,17 @@ label {
   width: 100%;
 }
 
-.source {
-  resize: none;
+.pane {
+  height: 100%;
 }
 
 .pdf {
   width: 100%;
-  flex: 1;
+  height: 100%;
+}
+
+.CodeMirror {
+  height: 100%;
 }
 
 .row {

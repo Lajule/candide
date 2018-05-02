@@ -17,6 +17,9 @@
       <button type="button" ng-click="ctrl.reset()">
         <i class="fa fa-file-o"></i> Nouveau document
       </button>
+      <button type="button" ng-click="ctrl.switch()">
+        <i class="fa fa-code"></i> {{ctrl.mode == 'preview' ? 'Afficher' : 'Cacher'}} source
+      </button>
       <a ng-href="{{ctrl.source | blob}}" download="{{ctrl.resume | title:'.json'}}">
         <i class="fa fa-floppy-o"></i> Enregistrer sous
       </button>
@@ -135,8 +138,12 @@
       </div>
     </div>
     <div class="right">
-      <textarea class="source" rows="3" ng-model="ctrl.source" ng-change="ctrl.updateSource()" code></textarea>
-      <iframe class="pdf" type="application/pdf" ng-src="{{ctrl.pdf}}" frameborder="0" title="Aperçu"></iframe>
+      <div class="pane" ng-hide="ctrl.mode == 'source'">
+        <iframe class="pdf" type="application/pdf" ng-src="{{ctrl.pdf}}" frameborder="0" title="Aperçu"></iframe>
+      </div>
+      <div class="pane" ng-hide="ctrl.mode == 'preview'">
+        <textarea class="source" rows="3" ng-model="ctrl.source" ng-change="ctrl.updateSource()" code></textarea>
+      </div>
     </div>
   </div>
 

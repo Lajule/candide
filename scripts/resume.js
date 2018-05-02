@@ -5,7 +5,7 @@ export function resume() {
     name: "John D",
     title: "Consultant",
     skills:
-      '<p style="text-align: center;"><strong>Expert</strong></p>\n<p><strong>Languages:</strong> Tous</p>\n<p><strong>M&eacute;htodes:</strong> Toutes</p>',
+      "<h1><strong>Expert</strong></h1>\n<p><strong>Languages:</strong> Tous</p>\n<p><strong>M&eacute;htodes:</strong> Toutes</p>",
     degrees: [
       {
         school: "Polytechnique PARIS",
