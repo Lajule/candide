@@ -53,13 +53,46 @@ export function body($scope, $timeout, $sce, $filter, resume) {
     "ctrl.resume",
     (newValue, oldValue) => {
       let pdf = new jsPDF("portrait", "mm", "a4");
+      let height = 15;
 
       pdf.setProperties({
-        title: $filter("title")(resume) + '.pdf'
+        title: $filter("title")(resume, ".pdf")
       });
-      pdf.text(15, 15, resume.name);
-      pdf.text(15, 30, resume.title);
-      pdf.fromHTML(resume.skills, 15, 45, { width: 170 });
+
+      pdf.text(15, height, resume.name);
+      height += 15;
+
+      pdf.text(15, height, resume.title);
+      height += 15;
+
+      pdf.fromHTML(resume.skills, 15, height, { width: 170 });
+      height += 50;
+
+      for (let i = 0; i < resume.degrees.length; ++i) {
+        let degree = resume.degrees[i];
+
+        pdf.text(15, height, `${degree.school} - ${degree.year}`);
+        height += 15;
+
+        pdf.text(15, height, degree.name);
+        height += 15;
+      }
+
+      for (let i = 0; i < resume.experiences.length; ++i) {
+        let experience = resume.experiences[i];
+
+        pdf.text(15, height, `${experience.firm} - ${experience.client}`);
+        height += 15;
+
+        pdf.text(15, height, `${experience.from} - ${experience.to}`);
+        height += 15;
+
+        pdf.text(15, height, experience.description);
+        height += 15;
+
+        pdf.fromHTML(experience.mission, 15, height, { width: 170 });
+        height += 50;
+      }
 
       vm.source = $filter("json")(resume);
       vm.pdf = $sce.trustAsResourceUrl(pdf.output("bloburi"));

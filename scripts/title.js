@@ -1,5 +1,5 @@
 title.$inject = [];
 
 export function title() {
-  return input => input.name || "candide";
+  return (input, prefix) => (input.name || "candide") + prefix;
 }

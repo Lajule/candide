@@ -12,12 +12,12 @@
 
 <body ng-controller="body as ctrl">
   <div class="header">
-    <h1>Candide</h1>
+    <h1><i class="fa fa-file"></i> Candide</h1>
     <div class="toolbar">
       <button type="button" ng-click="ctrl.reset()">
-        <i class="fa fa-file-text-o"></i> Nouveau document
+        <i class="fa fa-file-o"></i> Nouveau document
       </button>
-      <a ng-href="{{ctrl.source | blob}}" download="{{(ctrl.resume | title) + '.json'}}">
+      <a ng-href="{{ctrl.source | blob}}" download="{{ctrl.resume | title:'.json'}}">
         <i class="fa fa-floppy-o"></i> Enregistrer sous
       </button>
     </div>

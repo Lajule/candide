@@ -1,1 +1,1 @@
-  web: harp server app --port $PORT
+web: vendor/bin/heroku-php-apache2 app/
