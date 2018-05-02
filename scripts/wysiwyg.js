@@ -1,7 +1,5 @@
 import tinymce from "tinymce/tinymce";
 import "tinymce/themes/modern/theme";
-import "tinymce/plugins/paste";
-import "tinymce/plugins/link";
 
 wysiwyg.$inject = [];
 
@@ -11,8 +9,7 @@ export function wysiwyg() {
     link: function(scope, element, attrs, ngModel) {
       tinymce
         .init({
-          target: element[0],
-          plugins: ["paste", "link"]
+          target: element[0]
         })
         .then(([editor]) => {
           editor.on("change", () => {
