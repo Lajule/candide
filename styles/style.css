@@ -9,19 +9,21 @@ body {
   display: flex;
   flex-direction: column;
   margin: 0.5em;
+  color: #FFDD00;
+  background: rgb(82, 86, 89);
   height: 100%;
   font-family: 'PT Sans', sans-serif;
 }
 
 a,
 button {
+  color: #FFDD00;
   font-family: 'PT Serif', serif;
 }
 
 a {
   margin: auto 0;
   line-height: 1.15;
-  color: black;
   text-decoration: none;
 }
 
