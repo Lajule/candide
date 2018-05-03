@@ -5,13 +5,7 @@ body.$inject = ["$scope", "$timeout", "$sce", "$filter", "resume"];
 export function body($scope, $timeout, $sce, $filter, resume) {
   let vm = this;
 
-  vm.mode = "formulaire";
-
   vm.resume = resume;
-
-  vm.switch = () => {
-    vm.mode = vm.mode === "formulaire" ? "source" : "formulaire";
-  };
 
   vm.reset = () => {
     resume.name = "";

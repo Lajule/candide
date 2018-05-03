@@ -19,133 +19,131 @@
       <a ng-href="{{ctrl.source | blob}}" download="{{ctrl.resume | title:'.json'}}">
         <i class="fa fa-floppy-o"></i> Enregistrer sous
       </a>
-      <button type="button" ng-click="ctrl.switch()">
-        <i class="fa fa-code"></i> Changer de mode
-      </button>
     </div>
     <h1>
       <i class="fa fa-file"></i> Candide</h1>
   </div>
 
   <div class="container">
-    <div class="pane" ng-show="ctrl.mode == 'formulaire'">
-      <div class="left">
+    <div class="left">
+      <div class="row">
+        <div class="field">
+          <label>Nom</label>
+          <input type="text" ng-model="ctrl.resume.name" placeholder="Nom">
+        </div>
+        <div class="field">
+          <label>Titre</label>
+          <input type="text" ng-model="ctrl.resume.title" placeholder="Titre">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label>Competences</label>
+          <textarea ng-model="ctrl.resume.skills" rows="3" wysiwyg></textarea>
+        </div>
+      </div>
+
+      <div ng-repeat="degree in ctrl.resume.degrees track by $index">
         <div class="row">
           <div class="field">
-            <label>Nom</label>
-            <input type="text" ng-model="ctrl.resume.name" placeholder="Nom">
-          </div>
-          <div class="field">
-            <label>Titre</label>
-            <input type="text" ng-model="ctrl.resume.title" placeholder="Titre">
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="field">
-            <label>Competences</label>
-            <textarea ng-model="ctrl.resume.skills" rows="3" wysiwyg></textarea>
-          </div>
-        </div>
-
-        <div ng-repeat="degree in ctrl.resume.degrees track by $index">
-          <div class="row">
-            <div class="field">
-              <label>Ecole</label>
-              <input type="text" ng-model="degree.school" placeholder="Ecole">
-            </div>
-
-            <div class="field field-date">
-              <label>Année</label>
-              <input type="text" ng-model="degree.year" placeholder="Année" picker format="Y">
-            </div>
+            <label>Ecole</label>
+            <input type="text" ng-model="degree.school" placeholder="Ecole">
           </div>
 
-          <div class="row">
-            <div class="field">
-              <label>Diplôme</label>
-              <input type="text" ng-model="degree.name" placeholder="Diplôme">
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="field">
-              <button type="button" ng-hide="$index == 0" ng-click="ctrl.removeDegree($index)">
-                <i class="fa fa-minus-square"></i> Supprimer école
-              </button>
-            </div>
+          <div class="field field-date">
+            <label>Année</label>
+            <input type="text" ng-model="degree.year" placeholder="Année" picker format="Y">
           </div>
         </div>
 
         <div class="row">
           <div class="field">
-            <button type="button" ng-click="ctrl.addDegree()">
-              <i class="fa fa-plus-square"></i> Ajouter une école
-            </button>
-          </div>
-        </div>
-
-        <div ng-repeat="experience in ctrl.resume.experiences track by $index">
-          <div class="row">
-            <div class="field">
-              <label>Société</label>
-              <input type="text" ng-model="experience.firm" placeholder="Société">
-            </div>
-
-            <div class="field">
-              <label>Client</label>
-              <input type="text" ng-model="experience.client" placeholder="Client">
-            </div>
-
-            <div class="field field-date">
-              <label>De</label>
-              <input type="text" ng-model="experience.from" placeholder="De" picker format="Y-m">
-            </div>
-
-            <div class="field field-date">
-              <label>A</label>
-              <input type="text" ng-model="experience.to" placeholder="A" picker format="Y-m">
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="field">
-              <label>Description</label>
-              <input type="text" ng-model="experience.description" placeholder="Description">
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="field">
-              <label>Mission</label>
-              <textarea ng-model="experience.mission" rows="3" wysiwyg></textarea>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="field">
-              <button type="button" ng-hide="$index == 0" ng-click="ctrl.removeExperience($index)">
-                <i class="fa fa-minus-square"></i> Supprimer expérience
-              </button>
-            </div>
+            <label>Diplôme</label>
+            <input type="text" ng-model="degree.name" placeholder="Diplôme">
           </div>
         </div>
 
         <div class="row">
           <div class="field">
-            <button type="button" ng-click="ctrl.addExperience()">
-              <i class="fa fa-plus-square"></i> Ajouter expérience
+            <button type="button" ng-hide="$index == 0" ng-click="ctrl.removeDegree($index)">
+              <i class="fa fa-minus-square"></i> Supprimer école
             </button>
           </div>
         </div>
       </div>
-      <div class="right">
-        <iframe class="preview" type="application/pdf" ng-src="{{ctrl.pdf}}" frameborder="0" title="Aperçu"></iframe>
+
+      <div class="row">
+        <div class="field">
+          <button type="button" ng-click="ctrl.addDegree()">
+            <i class="fa fa-plus-square"></i> Ajouter une école
+          </button>
+        </div>
+      </div>
+
+      <div ng-repeat="experience in ctrl.resume.experiences track by $index">
+        <div class="row">
+          <div class="field">
+            <label>Société</label>
+            <input type="text" ng-model="experience.firm" placeholder="Société">
+          </div>
+
+          <div class="field">
+            <label>Client</label>
+            <input type="text" ng-model="experience.client" placeholder="Client">
+          </div>
+
+          <div class="field field-date">
+            <label>De</label>
+            <input type="text" ng-model="experience.from" placeholder="De" picker format="Y-m">
+          </div>
+
+          <div class="field field-date">
+            <label>A</label>
+            <input type="text" ng-model="experience.to" placeholder="A" picker format="Y-m">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label>Description</label>
+            <input type="text" ng-model="experience.description" placeholder="Description">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label>Mission</label>
+            <textarea ng-model="experience.mission" rows="3" wysiwyg></textarea>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <button type="button" ng-hide="$index == 0" ng-click="ctrl.removeExperience($index)">
+              <i class="fa fa-minus-square"></i> Supprimer expérience
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <button type="button" ng-click="ctrl.addExperience()">
+            <i class="fa fa-plus-square"></i> Ajouter expérience
+          </button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label>Source</label>
+          <textarea rows="3" ng-model="ctrl.source" ng-change="ctrl.updateSource()" code></textarea>
+        </div>
       </div>
     </div>
-
-    <div class="pane" ng-show="ctrl.mode == 'source'">
-      <textarea class="source" rows="3" ng-model="ctrl.source" ng-change="ctrl.updateSource()" code></textarea>
+    <div class="right">
+      <iframe class="preview" type="application/pdf" ng-src="{{ctrl.pdf}}" frameborder="0" title="Aperçu"></iframe>
     </div>
   </div>
 
