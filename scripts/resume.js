@@ -2,15 +2,15 @@ resume.$inject = [];
 
 export function resume() {
   return {
-    name: "John D",
-    title: "Consultant",
+    name: "Harry P.",
+    title: "Magician",
     skills:
-      "<h1><strong>Expert</strong></h1>\n<p><strong>Languages:</strong> Tous</p>\n<p><strong>M&eacute;htodes:</strong> Toutes</p>",
+      "<p>Miscellaneous spells</p>",
     degrees: [
       {
-        school: "Polytechnique PARIS",
+        school: "Hogwarts School of Witchcraft and Wizardry",
         year: "1998",
-        name: "Dipôme de l'école Polytechnique"
+        name: "Gryffindor"
       }
     ],
     experiences: [
@@ -21,7 +21,7 @@ export function resume() {
         to: "2018-04",
         description: "Membre de l'équipe SI Entreprise",
         mission:
-          "<p>D&eacute;veloppment C/C++/Java/ksh</p>\n<p>R&eacute;daction de sp&eacute;cifications</p>\n<p>Tests d'int&eacute;gration</p>"
+          "<p>Kill spells</p>"
       }
     ]
   };

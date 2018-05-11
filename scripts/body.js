@@ -5,6 +5,7 @@ body.$inject = ["$scope", "$timeout", "$sce", "$filter", "resume"];
 export function body($scope, $timeout, $sce, $filter, resume) {
   let vm = this;
 
+  vm.preview = true;
   vm.resume = resume;
 
   vm.reset = () => {
@@ -76,6 +77,11 @@ export function body($scope, $timeout, $sce, $filter, resume) {
 
         pdf.text(15, height, degree.name);
         height += 15;
+
+        if (height >= 295) {
+          pdf.addPage();
+          height = 15;
+        }
       }
 
       for (let i = 0; i < resume.experiences.length; ++i) {
@@ -92,6 +98,11 @@ export function body($scope, $timeout, $sce, $filter, resume) {
 
         pdf.fromHTML(experience.mission, 15, height, { width: 170 });
         height += 50;
+
+        if (height >= 295) {
+          pdf.addPage();
+          height = 15;
+        }
       }
 
       vm.source = $filter("json")(resume);

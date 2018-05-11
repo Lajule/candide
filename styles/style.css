@@ -1,89 +1,18 @@
+@import url("https://fonts.googleapis.com/css?family=PT+Sans|PT+Serif");
+
 @import "normalize.css/normalize.css";
+@import "milligram/dist/milligram.css";
 @import "font-awesome/css/font-awesome.css";
 @import "flatpickr/dist/flatpickr.css";
 @import "codemirror/lib/codemirror.css";
 
-@import url("https://fonts.googleapis.com/css?family=PT+Sans|PT+Serif");
-
 body {
-  display: flex;
-  flex-direction: column;
-  margin: 0.5em;
-  color: #FFDD00;
-  background: rgb(82, 86, 89);
-  height: 100%;
+  margin: 1em;
   font-family: 'PT Sans', sans-serif;
 }
 
-a,
-button {
-  color: #FFDD00;
-  font-family: 'PT Serif', serif;
-}
-
-a {
-  margin: auto 0;
-  line-height: 1.15;
-  text-decoration: none;
-}
-
-button {
-  background: none;
-  border: none;
-  text-align: left;
-  cursor: pointer;
-}
-
-button:focus,
-input:focus {
-  outline: 0;
-}
-
-label {
-  font-weight: bold;
-}
-
-.header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.toolbar {
-  display: flex;
-  flex-direction: row;
-}
-
-.container {
-  display: flex;
-  flex-direction: row;
-  flex: 1;
-}
-
-.left,
-.right {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
+.CodeMirror,
 .preview {
-  flex: 1;
   width: 100%;
-}
-
-.row {
-  display: flex;
-  flex-direction: row;
-  margin: 0 0.5em 1em;
-}
-
-.field {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-.field-date {
-  width: 15%;
+  height: 45em;
 }
