@@ -14,11 +14,13 @@
 
   <div class="container">
     <div class="row">
-      <div class="column">
-        <h1>
+      <div class="column column-50 column-offset-25">
+        <h1 class="title">
           <i class="fa fa-file"></i> Candide
         </h1>
       </div>
+    </div>
+    <div class="row">
       <div class="column">
         <a class="button button-clear" ng-click="ctrl.reset()">
           <i class="fa fa-file-o"></i> Nouveau document
@@ -30,7 +32,7 @@
     </div>
     <div class="row">
       <div class="column">
-        <form>
+        <form class="form">
           <fieldset>
             <label>Nom</label>
             <input type="text" ng-model="ctrl.resume.name" placeholder="Nom">
@@ -38,6 +40,8 @@
             <input type="text" ng-model="ctrl.resume.title" placeholder="Titre">
             <label>Competences</label>
             <textarea ng-model="ctrl.resume.skills" rows="3" wysiwyg></textarea>
+            <br>
+            <hr>
             <div ng-repeat="degree in ctrl.resume.degrees track by $index">
               <label>Ecole</label>
               <input type="text" ng-model="degree.school" placeholder="Ecole">
@@ -48,10 +52,12 @@
               <button type="button" class="button button-clear" ng-hide="$index == 0" ng-click="ctrl.removeDegree($index)">
                 <i class="fa fa-minus-square"></i> Supprimer école
               </button>
+              <hr>
             </div>
             <button type="button" class="button button-outline" ng-click="ctrl.addDegree()">
               <i class="fa fa-plus-square"></i> Ajouter une école
             </button>
+            <hr>
             <div ng-repeat="experience in ctrl.resume.experiences track by $index">
               <label>Société</label>
               <input type="text" ng-model="experience.firm" placeholder="Société">
@@ -65,9 +71,11 @@
               <input type="text" ng-model="experience.description" placeholder="Description">
               <label>Mission</label>
               <textarea ng-model="experience.mission" rows="3" wysiwyg></textarea>
+              <br>
               <button type="button" class="button button-clear" ng-hide="$index == 0" ng-click="ctrl.removeExperience($index)">
                 <i class="fa fa-minus-square"></i> Supprimer expérience
               </button>
+              <hr>
             </div>
             <button type="button" class="button button-outline" ng-click="ctrl.addExperience()">
               <i class="fa fa-plus-square"></i> Ajouter expérience
@@ -80,6 +88,7 @@
         <div ng-hide="ctrl.preview">
           <textarea rows="3" ng-model="ctrl.source" ng-change="ctrl.updateSource()" code></textarea>
         </div>
+        <br>
         <button type="button" class="button button-outline" ng-click="ctrl.preview = !ctrl.preview">
           <i class="fa fa-code"></i> Changer de mode
         </button>
