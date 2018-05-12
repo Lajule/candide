@@ -11,12 +11,21 @@ body {
   font-family: 'PT Sans', sans-serif;
 }
 
-.title {
+.title,
+.subtitle,
+.bar {
   text-align: center;
+}
+
+@media (min-width: 40.0rem) {
+  .form {
+    height: 80vh;
+    overflow-y: auto;
+  }
 }
 
 .CodeMirror,
 .preview {
   width: 100%;
-  height: 70vh;
+  height: 80vh;
 }

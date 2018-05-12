@@ -11,6 +11,10 @@
 </head>
 
 <body ng-controller="body as ctrl">
+  <a href="https://github.com/Lajule/candide">
+    <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"
+      alt="Fork me on GitHub">
+  </a>
 
   <div class="container">
     <div class="row">
@@ -21,7 +25,12 @@
       </div>
     </div>
     <div class="row">
-      <div class="column">
+      <div class="column column-60 column-offset-20">
+        <h3 class="subtitle">Générez votre CV au format PDF</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column column-50 column-offset-25 bar">
         <a class="button button-clear" ng-click="ctrl.reset()">
           <i class="fa fa-file-o"></i> Nouveau document
         </a>
@@ -32,7 +41,17 @@
     </div>
     <div class="row">
       <div class="column">
-        <form class="form">
+        <button type="button" class="button" ng-class="{ 'button-outline': ctrl.step != 0 }" ng-click="ctrl.step = 0">
+          <i class="fa fa-user"></i> Personne
+        </button>
+        <button type="button" class="button" ng-class="{ 'button-outline': ctrl.step != 1 }" ng-click="ctrl.step = 1">
+          <i class="fa fa-university"></i> Formation
+        </button>
+        <button type="button" class="button" ng-class="{ 'button-outline': ctrl.step != 2 }" ng-click="ctrl.step = 2">
+          <i class="fa fa-building"></i> Expériences
+        </button>
+
+        <form class="form" ng-hide="ctrl.step != 0">
           <fieldset>
             <label>Nom</label>
             <input type="text" ng-model="ctrl.resume.name" placeholder="Nom">
@@ -40,15 +59,20 @@
             <input type="text" ng-model="ctrl.resume.title" placeholder="Titre">
             <label>Competences</label>
             <textarea ng-model="ctrl.resume.skills" rows="3" wysiwyg></textarea>
-            <br>
             <hr>
+          </fieldset>
+        </form>
+
+        <form class="form" ng-hide="ctrl.step != 1">
+          <fieldset>
             <div ng-repeat="degree in ctrl.resume.degrees track by $index">
               <label>Ecole</label>
               <input type="text" ng-model="degree.school" placeholder="Ecole">
               <label>Année</label>
               <input type="text" ng-model="degree.year" placeholder="Année" picker format="Y">
               <label>Diplôme</label>
-              <input type="text" ng-model="degree.name" placeholder="Diplôme">
+              <textarea ng-model="degree.name" rows="3" wysiwyg></textarea>
+              <br>
               <button type="button" class="button button-clear" ng-hide="$index == 0" ng-click="ctrl.removeDegree($index)">
                 <i class="fa fa-minus-square"></i> Supprimer école
               </button>
@@ -57,7 +81,11 @@
             <button type="button" class="button button-outline" ng-click="ctrl.addDegree()">
               <i class="fa fa-plus-square"></i> Ajouter une école
             </button>
-            <hr>
+          </fieldset>
+        </form>
+
+        <form class="form" ng-hide="ctrl.step != 2">
+          <fieldset>
             <div ng-repeat="experience in ctrl.resume.experiences track by $index">
               <label>Société</label>
               <input type="text" ng-model="experience.firm" placeholder="Société">
@@ -84,14 +112,26 @@
         </form>
       </div>
       <div class="column">
+        <button type="button" class="button" ng-class="{ 'button-outline': !ctrl.preview }" ng-click="ctrl.preview = true">
+          <i class="fa fa-file-pdf-o"></i> pdf
+        </button>
+        <button type="button" class="button" ng-class="{ 'button-outline': ctrl.preview }" ng-click="ctrl.preview = false">
+          <i class="fa fa-code"></i> Source
+        </button>
         <iframe ng-hide="!ctrl.preview" class="preview" type="application/pdf" ng-src="{{ctrl.pdf}}" frameborder="0" title="Aperçu"></iframe>
         <div ng-hide="ctrl.preview">
           <textarea rows="3" ng-model="ctrl.source" ng-change="ctrl.updateSource()" code></textarea>
         </div>
-        <br>
-        <button type="button" class="button button-outline" ng-click="ctrl.preview = !ctrl.preview">
-          <i class="fa fa-code"></i> Changer de mode
-        </button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column column-50 column-offset-25 bar">
+        <a class="button button-clear" href="https://github.com/Lajule">
+          <i class="fa fa-github"></i> GitHub
+        </a>
+        <a class="button button-clear" href="https://codepen.io/Lajule/">
+          <i class="fa fa-codepen"></i> Codepen
+        </a>
       </div>
     </div>
   </div>
