@@ -18,15 +18,15 @@
 
   <div class="container">
     <div class="row">
-      <div class="column column-50 column-offset-25">
-        <h1 class="title">
-          Candide
+      <div class="column column-50 column-offset-25 bar">
+        <h1>
+            <img class="logo" src="./images/candide-256.png"> Candide
         </h1>
       </div>
     </div>
     <div class="row">
-      <div class="column column-60 column-offset-20">
-        <h3 class="subtitle">Générez votre CV au format PDF</h3>
+      <div class="column column-60 column-offset-20 bar">
+        <h3>Générez votre CV au format PDF</h3>
       </div>
     </div>
     <div class="row">
@@ -34,7 +34,8 @@
         <a class="button button-clear" ng-click="ctrl.reset()" data-balloon="Efface tout !" data-balloon-pos="down">
           <i class="fa fa-file-o"></i> Nouveau
         </a>
-        <a class="button button-clear" ng-href="{{ctrl.source | blob}}" download="{{ctrl.resume | title:'.json'}}" data-balloon="Sauvegarde les données dans un fichier" data-balloon-pos="down">
+        <a class="button button-clear" ng-href="{{ctrl.source | blob}}" download="{{ctrl.resume | title:'.json'}}" data-balloon="Sauvegarde les données dans un fichier"
+          data-balloon-pos="down">
           <i class="fa fa-floppy-o"></i> Enregistrer
         </a>
         <a class="button button-clear" ng-click="ctrl.download()" data-balloon="Récupére votre CV en pdf" data-balloon-pos="down">

@@ -12,10 +12,13 @@ body {
   font-family: 'PT Sans', sans-serif;
 }
 
-.title,
-.subtitle,
 .bar {
   text-align: center;
+}
+
+.logo {
+  width: 0.8em;
+  vertical-align: baseline;
 }
 
 @media (min-width: 40.0rem) {
