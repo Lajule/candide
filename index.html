@@ -20,7 +20,7 @@
     <div class="row">
       <div class="column column-50 column-offset-25">
         <h1 class="title">
-          <i class="fa fa-file"></i> Candide
+          Candide
         </h1>
       </div>
     </div>
@@ -30,12 +30,15 @@
       </div>
     </div>
     <div class="row">
-      <div class="column column-50 column-offset-25 bar">
-        <a class="button button-clear" ng-click="ctrl.reset()">
-          <i class="fa fa-file-o"></i> Nouveau document
+      <div class="column column-70 column-offset-15 bar">
+        <a class="button button-clear" ng-click="ctrl.reset()" data-balloon="Efface tout !" data-balloon-pos="down">
+          <i class="fa fa-file-o"></i> Nouveau
         </a>
-        <a class="button button-clear" ng-href="{{ctrl.source | blob}}" download="{{ctrl.resume | title:'.json'}}">
-          <i class="fa fa-floppy-o"></i> Enregistrer sous
+        <a class="button button-clear" ng-href="{{ctrl.source | blob}}" download="{{ctrl.resume | title:'.json'}}" data-balloon="Sauvegarde les données dans un fichier" data-balloon-pos="down">
+          <i class="fa fa-floppy-o"></i> Enregistrer
+        </a>
+        <a class="button button-clear" ng-click="ctrl.download()" data-balloon="Récupére votre CV en pdf" data-balloon-pos="down">
+          <i class="fa fa-download"></i> Télécharger
         </a>
       </div>
     </div>
@@ -112,14 +115,16 @@
         </form>
       </div>
       <div class="column">
-        <button type="button" class="button" ng-class="{ 'button-outline': !ctrl.preview }" ng-click="ctrl.preview = true">
-          <i class="fa fa-file-pdf-o"></i> pdf
-        </button>
-        <button type="button" class="button" ng-class="{ 'button-outline': ctrl.preview }" ng-click="ctrl.preview = false">
+        <button type="button" class="button" ng-class="{ 'button-outline': ctrl.mode != 'default' }" ng-click="ctrl.mode = 'default'">
           <i class="fa fa-code"></i> Source
         </button>
-        <iframe ng-hide="!ctrl.preview" class="preview" type="application/pdf" ng-src="{{ctrl.pdf}}" frameborder="0" title="Aperçu"></iframe>
-        <div ng-hide="ctrl.preview">
+        <button type="button" class="button" ng-class="{ 'button-outline': ctrl.mode != 'preview' }" ng-click="ctrl.mode = 'preview'">
+          <i class="fa fa-file-pdf-o"></i> pdf
+        </button>
+
+        <iframe ng-hide="ctrl.mode != 'preview'" class="preview" type="application/pdf" ng-src="{{ctrl.pdf}}" frameborder="0" title="Aperçu"></iframe>
+
+        <div ng-hide="ctrl.mode != 'default'">
           <textarea rows="3" ng-model="ctrl.source" ng-change="ctrl.updateSource()" code></textarea>
         </div>
       </div>

@@ -4,13 +4,12 @@ export function resume() {
   return {
     name: "",
     title: "",
-    skills:
-      "<div></div>",
+    skills: "<div></div>",
     degrees: [
       {
         school: "",
         year: "",
-        name: ""
+        name: "<div></div>"
       }
     ],
     experiences: [
@@ -20,8 +19,7 @@ export function resume() {
         from: "",
         to: "",
         description: "",
-        mission:
-          "<div></div>"
+        mission: "<div></div>"
       }
     ]
   };
