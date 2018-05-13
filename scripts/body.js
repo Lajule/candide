@@ -10,7 +10,7 @@ export function body($scope, $timeout, $filter, $sce, resume) {
   vm.reset = () => {
     resume.name = "";
     resume.title = "";
-    resume.skills = "<div></div>";
+    resume.skills = "";
     resume.degrees = [];
     vm.addDegree();
     resume.experiences = [];
@@ -18,7 +18,7 @@ export function body($scope, $timeout, $filter, $sce, resume) {
   };
 
   vm.addDegree = () => {
-    resume.degrees.push({ school: "", year: "", name: "<div></div>" });
+    resume.degrees.push({ school: "", year: "", name: "" });
   };
 
   vm.removeDegree = index => {
@@ -32,7 +32,7 @@ export function body($scope, $timeout, $filter, $sce, resume) {
       from: "",
       to: "",
       description: "",
-      mission: "<div></div>"
+      mission: ""
     });
   };
 

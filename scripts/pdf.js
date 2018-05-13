@@ -2,15 +2,17 @@ import jsPDF from "jspdf";
 
 pdf.$inject = ["resume"];
 
-export function pdf(resume, title) {
-  return input => {
-    let pdf = new jsPDF("portrait", "mm", "a4");
+export function pdf(resume) {
+  return (input, title) => {
+    let pdf = new jsPDF();
 
     pdf.setProperties({ title });
 
-    pdf.text(15, 15, resume.name);
-    pdf.text(15, 30, resume.title);
-    pdf.fromHTML(resume.skills, 15, 45, { width: 155 });
+    pdf.text(15, 25, resume.name);
+
+    pdf.text(15, 50, resume.title);
+
+    pdf.fromHTML(resume.skills, 15, 75, { width: 155 });
     pdf.addPage();
 
     let height = 15;
