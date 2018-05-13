@@ -9,10 +9,6 @@
       "tinymce",
       "codemirror"
     ],
-    "addons": [
-    ],
-    "env": {
-    },
     "buildpacks": [
       {
         "url": "heroku/nodejs"
