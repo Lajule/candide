@@ -7,6 +7,10 @@
 @import "flatpickr/dist/flatpickr.css";
 @import "codemirror/lib/codemirror.css";
 
+[ng-cloak] {
+  display: none !important;
+}
+
 body {
   margin: 1em;
   font-family: 'PT Sans', sans-serif;

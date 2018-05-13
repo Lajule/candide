@@ -20,26 +20,26 @@
     <div class="row">
       <div class="column column-50 column-offset-25 bar">
         <h1>
-            <img class="logo" src="./images/candide-256.png"> Candide
+          <img class="logo" src="./images/candide-256.png"> Candide
         </h1>
       </div>
     </div>
-    <div class="row">
+    <div class="row" ng-cloak>
       <div class="column column-60 column-offset-20 bar">
-        <h3>Générez votre CV au format PDF</h3>
+        <h3>{{ 'subtitle' | translate }}</h3>
       </div>
     </div>
-    <div class="row">
+    <div class="row" ng-cloak>
       <div class="column column-70 column-offset-15 bar">
-        <a class="button button-clear" ng-click="ctrl.reset()" data-balloon="Efface tout !" data-balloon-pos="down">
-          <i class="fa fa-file-o"></i> Nouveau
+        <a class="button button-clear" ng-click="ctrl.reset()" data-balloon="{{ 'new.tooltip' | translate }}" data-balloon-pos="down">
+          <i class="fa fa-file-o"></i> {{ 'new.label' | translate }}
         </a>
-        <a class="button button-clear" ng-href="{{ctrl.source | blob}}" download="{{ctrl.resume | title:'.json'}}" data-balloon="Sauvegarde les données dans un fichier"
+        <a class="button button-clear" ng-href="{{ctrl.source | blob}}" download="{{ctrl.resume | title:'.json'}}" data-balloon="{{ 'save.tooltip' | translate }}"
           data-balloon-pos="down">
-          <i class="fa fa-floppy-o"></i> Enregistrer
+          <i class="fa fa-floppy-o"></i> {{ 'save.label' | translate }}
         </a>
-        <a class="button button-clear" ng-click="ctrl.download()" data-balloon="Récupére votre CV en pdf" data-balloon-pos="down">
-          <i class="fa fa-download"></i> Télécharger
+        <a class="button button-clear" ng-click="ctrl.download()" data-balloon="{{ 'download.tooltip' | translate }}" data-balloon-pos="down">
+          <i class="fa fa-download"></i> {{ 'download.label' | translate }}
         </a>
       </div>
     </div>
