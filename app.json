@@ -1,0 +1,21 @@
+{
+    "name": "Candide",
+    "description": "Generate your PDF resume",
+    "repository": "https://github.com/Lajule/candide",
+    "logo": "",
+    "keywords": [
+      "angularjs",
+      "jsPDF",
+      "tinymce",
+      "codemirror"
+    ],
+    "addons": [
+    ],
+    "env": {
+    },
+    "buildpacks": [
+      {
+        "url": "heroku/nodejs"
+      }
+    ]
+  }
