@@ -10,15 +10,15 @@ function newPage(pdf, title) {
   pdf.rect(200, 0, 210, 297, "F");
 
   let logo = document.querySelector(".logo");
-  let canvas = document.createElement('canvas');
+  let canvas = document.createElement("canvas");
   canvas.width = logo.naturalWidth;
   canvas.height = logo.naturalHeight;
-  canvas.getContext('2d').drawImage(logo, 10, 10);
-  pdf.addImage(canvas.toDataURL('image/png'), 'JPEG', 190, 277, 10, 10);
+  canvas.getContext("2d").drawImage(logo, 10, 10);
+  pdf.addImage(canvas.toDataURL("image/png"), "JPEG", 190, 277, 10, 10);
 
   pdf.setFontType("normal");
   pdf.setFontSize(22);
-  pdf.text(105, 12, title, null, null, 'center');
+  pdf.text(105, 12, title, null, null, "center");
 }
 
 export function pdf(resume) {
@@ -73,7 +73,7 @@ export function pdf(resume) {
       pdf.text(15, 56, experience.description);
 
       pdf.fromHTML(experience.mission, 15, 78, { width: 145 });
-      
+
       if (i > 0) {
         pdf.addPage();
       }
