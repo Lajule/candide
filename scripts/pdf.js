@@ -2,66 +2,82 @@ import jsPDF from "jspdf";
 
 pdf.$inject = ["resume"];
 
+function newPage(pdf, title) {
+  pdf.setFillColor(155, 77, 202);
+  pdf.rect(0, 0, 210, 20, "F");
+  pdf.rect(0, 287, 210, 10, "F");
+  pdf.rect(0, 0, 10, 297, "F");
+  pdf.rect(200, 0, 210, 297, "F");
+
+  let logo = document.querySelector(".logo");
+  let canvas = document.createElement('canvas');
+  canvas.width = logo.naturalWidth;
+  canvas.height = logo.naturalHeight;
+  canvas.getContext('2d').drawImage(logo, 10, 10);
+  pdf.addImage(canvas.toDataURL('image/png'), 'JPEG', 190, 277, 10, 10);
+
+  pdf.setFontType("normal");
+  pdf.setFontSize(22);
+  pdf.text(105, 12, title, null, null, 'center');
+}
+
 export function pdf(resume) {
   return (input, title) => {
     let pdf = new jsPDF();
 
     pdf.setProperties({ title });
 
-    pdf.text(15, 25, resume.name);
+    newPage(pdf, "Personne");
 
-    pdf.text(15, 50, resume.title);
+    pdf.setFontType("bold");
+    pdf.setFontSize(22);
+    pdf.text(15, 32, resume.name);
 
-    pdf.fromHTML(resume.skills, 15, 75, { width: 155 });
+    pdf.setFontType("normal");
+    pdf.setFontSize(18);
+    pdf.text(15, 48, resume.title);
+
+    pdf.fromHTML(resume.skills, 15, 56, { width: 145 });
+
     pdf.addPage();
-
-    let height = 15;
-
-    pdf.text(15, height, "Formation");
-    height += 15;
 
     for (let i = 0; i < resume.degrees.length; ++i) {
       let degree = resume.degrees[i];
 
-      if (height >= 295) {
-        pdf.addPage();
-        height = 15;
-      }
+      newPage(pdf, "Ecole");
 
-      pdf.text(15, height, `${degree.school} - ${degree.year}`);
-      height += 15;
+      pdf.setFontType("bold");
+      pdf.setFontSize(22);
+      pdf.text(15, 32, `${degree.school} - ${degree.year}`);
 
-      pdf.fromHTML(degree.name, 15, height, { width: 155 });
-      height += 15;
+      pdf.fromHTML(degree.name, 15, 48, { width: 145 });
+
+      pdf.addPage();
     }
-    pdf.addPage();
-
-    height = 15;
-
-    pdf.text(15, height, "Epériences");
-    height += 15;
 
     for (let i = 0; i < resume.experiences.length; ++i) {
       let experience = resume.experiences[i];
 
-      if (height >= 295) {
+      newPage(pdf, "Expérience");
+
+      pdf.setFontType("bold");
+      pdf.setFontSize(22);
+      pdf.text(15, 32, `${experience.firm} - ${experience.client}`);
+
+      pdf.setFontType("bolditalic");
+      pdf.setFontSize(14);
+      pdf.text(15, 44, `${experience.from} - ${experience.to}`);
+
+      pdf.setFontType("normal");
+      pdf.setFontSize(18);
+      pdf.text(15, 56, experience.description);
+
+      pdf.fromHTML(experience.mission, 15, 78, { width: 145 });
+      
+      if (i > 0) {
         pdf.addPage();
-        height = 15;
       }
-
-      pdf.text(15, height, `${experience.firm} - ${experience.client}`);
-      height += 15;
-
-      pdf.text(15, height, `${experience.from} - ${experience.to}`);
-      height += 15;
-
-      pdf.text(15, height, experience.description);
-      height += 15;
-
-      pdf.fromHTML(experience.mission, 15, height, { width: 155 });
-      height += 150;
     }
-    pdf.addPage();
 
     return pdf;
   };
