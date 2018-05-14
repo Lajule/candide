@@ -2,7 +2,7 @@
     "name": "Candide",
     "description": "Generate your PDF resume",
     "repository": "https://github.com/Lajule/candide",
-    "logo": "https://candide-app.herokuapp.com/candide-256.png",
+    "logo": "https://github.com/Lajule/candide/raw/master/images/candide-256.png",
     "keywords": [
       "angularjs",
       "jsPDF",
