@@ -43,16 +43,16 @@
         </a>
       </div>
     </div>
-    <div class="row">
+    <div class="row" ng-cloak>
       <div class="column">
         <button type="button" class="button" ng-class="{ 'button-outline': ctrl.step != 0 }" ng-click="ctrl.step = 0">
-          <i class="fa fa-user"></i> Personne
+          <i class="fa fa-user"></i> {{ 'people' | translate }}
         </button>
         <button type="button" class="button" ng-class="{ 'button-outline': ctrl.step != 1 }" ng-click="ctrl.step = 1">
-          <i class="fa fa-university"></i> Formation
+          <i class="fa fa-university"></i> {{ 'education' | translate }}
         </button>
         <button type="button" class="button" ng-class="{ 'button-outline': ctrl.step != 2 }" ng-click="ctrl.step = 2">
-          <i class="fa fa-building"></i> Expériences
+          <i class="fa fa-building"></i> {{ 'experiences' | translate }}
         </button>
 
         <form class="form" ng-hide="ctrl.step != 0">

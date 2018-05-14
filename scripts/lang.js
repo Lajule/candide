@@ -11,7 +11,10 @@ export let en = {
   download: {
     label: "Download",
     tooltip: "Download your PDF resume"
-  }
+  },
+  people: "People",
+  education: "Education",
+  experiences: "Experiences"
 };
 
 export let fr = {
@@ -27,5 +30,8 @@ export let fr = {
   download: {
     label: "Télécharger",
     tooltip: "Récupére votre CV en pdf"
-  }
+  },
+  people: "Personne",
+  education: "Formation",
+  experiences: "Expériences"
 };
