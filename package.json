@@ -6,7 +6,8 @@
     "http-serve": "^1.0.1",
     "parcel-bundler": "^1.7.1",
     "postcss-import": "^11.1.0",
-    "prettier": "^1.12.1"
+    "prettier": "^1.12.1",
+    "shx": "^0.2.2"
   },
   "dependencies": {
     "angular": "^1.6.10",
@@ -21,7 +22,11 @@
     "tinymce": "^4.7.11"
   },
   "scripts": {
-    "postinstall": "parcel build -d public index.html",
-    "start": "hs public"
+    "mkdir": "shx mkdir -p dist",
+    "parcel": "parcel build -d dist index.html",
+    "favicon": "shx cp favicon.ico dist",
+    "skins": "shx cp -R node_modules/tinymce/skins dist",
+    "postinstall": "npm run mkdir && npm run favicon && npm run skins && npm run parcel",
+    "start": "hs dist"
   }
 }
