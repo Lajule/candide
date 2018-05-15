@@ -22,12 +22,12 @@ function newPage(pdf, title) {
 }
 
 export function pdf(resume) {
-  return (input, title) => {
+  return (input, title, { people, education, experiences }) => {
     let pdf = new jsPDF();
 
     pdf.setProperties({ title });
 
-    newPage(pdf, "Personne");
+    newPage(pdf, people.toString());
 
     pdf.setFontType("bold");
     pdf.setFontSize(22);
@@ -44,7 +44,7 @@ export function pdf(resume) {
     for (let i = 0; i < resume.degrees.length; ++i) {
       let degree = resume.degrees[i];
 
-      newPage(pdf, "Ecole");
+      newPage(pdf, education.toString());
 
       pdf.setFontType("bold");
       pdf.setFontSize(22);
@@ -58,7 +58,7 @@ export function pdf(resume) {
     for (let i = 0; i < resume.experiences.length; ++i) {
       let experience = resume.experiences[i];
 
-      newPage(pdf, "Expérience");
+      newPage(pdf, experiences.toString());
 
       pdf.setFontType("bold");
       pdf.setFontSize(22);

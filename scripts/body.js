@@ -1,6 +1,6 @@
-body.$inject = ["$scope", "$timeout", "$filter", "$sce", "resume"];
+body.$inject = ["$scope", "$translate", "$filter", "$sce", "resume"];
 
-export function body($scope, $timeout, $filter, $sce, resume) {
+export function body($scope, $translate, $filter, $sce, resume) {
   let vm = this;
 
   vm.step = 0;
@@ -50,19 +50,24 @@ export function body($scope, $timeout, $filter, $sce, resume) {
   };
 
   vm.download = () => {
-    let title = $filter("title")(resume, ".pdf");
-    let pdf = $filter("pdf")(resume, title);
-    pdf.save(title);
+    $translate(["people", "education", "experiences"]).then(sections => {
+      let title = $filter("title")(resume, ".pdf");
+      let pdf = $filter("pdf")(resume, title, sections);
+
+      pdf.save(title);
+    });
   };
 
   $scope.$watch(
     "ctrl.resume",
     (newValue, oldValue) => {
-      let title = $filter("title")(resume, ".pdf");
-      let pdf = $filter("pdf")(resume, title);
+      $translate(["people", "education", "experiences"]).then(sections => {
+        let title = $filter("title")(resume, ".pdf");
+        let pdf = $filter("pdf")(resume, title, sections);
 
+        vm.pdf = $sce.trustAsResourceUrl(pdf.output("bloburi"));
+      });
       vm.source = $filter("json")(resume);
-      vm.pdf = $sce.trustAsResourceUrl(pdf.output("bloburi"));
     },
     true
   );
