@@ -14,7 +14,29 @@ export let en = {
   },
   people: "People",
   education: "Education",
-  experiences: "Experiences"
+  experiences: "Experiences",
+  name: "Name",
+  title: "Tilte",
+  skills: "Skills",
+  school: "School",
+  year: "Year",
+  degree: "Degree",
+  firm: "Firm",
+  client: "Client",
+  from: "From",
+  to: "To",
+  description: "Description",
+  mission: "Mission",
+  add: {
+    school: "Add a school",
+    experience: "Add an experience"
+  },
+  remove: {
+    school: "Remove school",
+    experience: "Remove experience"
+  },
+  source: "Source",
+  pdf: "PDF"
 };
 
 export let fr = {
@@ -33,5 +55,27 @@ export let fr = {
   },
   people: "Personne",
   education: "Formation",
-  experiences: "Expériences"
+  experiences: "Expériences",
+  name: "Nom",
+  title: "Titre",
+  skills: "Compétences",
+  school: "Ecole",
+  year: "Année",
+  degree: "Diplôme",
+  firm: "Société",
+  client: "Client",
+  from: "De",
+  to: "A",
+  description: "Description",
+  mission: "Mission",
+  add: {
+    school: "Ajouter une école",
+    experience: "Ajouter une expérience"
+  },
+  remove: {
+    school: "Supprimer école",
+    experience: "Supprimer expérience"
+  },
+  source: "Source",
+  pdf: "PDF"
 };

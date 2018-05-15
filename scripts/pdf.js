@@ -7,7 +7,7 @@ function newPage(pdf, title) {
   pdf.rect(0, 0, 210, 20, "F");
   pdf.rect(0, 287, 210, 10, "F");
   pdf.rect(0, 0, 10, 297, "F");
-  pdf.rect(200, 0, 210, 297, "F");
+  pdf.rect(200, 0, 10, 297, "F");
 
   let logo = document.querySelector(".logo");
   let canvas = document.createElement("canvas");
