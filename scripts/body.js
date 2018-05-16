@@ -1,6 +1,6 @@
-body.$inject = ["$scope", "$translate", "$filter", "$sce", "resume"];
+body.$inject = ["$scope", "$translate", "$filter", "$sce", "$location", "resume"];
 
-export function body($scope, $translate, $filter, $sce, resume) {
+export function body($scope, $translate, $filter, $sce, $location, resume) {
   let vm = this;
 
   vm.step = 0;
@@ -68,6 +68,14 @@ export function body($scope, $translate, $filter, $sce, resume) {
         vm.pdf = $sce.trustAsResourceUrl(pdf.output("bloburi"));
       });
       vm.source = $filter("json")(resume);
+    },
+    true
+  );
+
+  $scope.$watch(
+    () => $location.search(),
+    (newValue, oldValue) => {
+      $translate.use(newValue.lang);
     },
     true
   );

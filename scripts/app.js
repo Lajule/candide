@@ -30,6 +30,6 @@ angular
         .translations("en", en)
         .translations("fr", fr)
         .useSanitizeValueStrategy("sce")
-        .preferredLanguage("fr");
+        .preferredLanguage("en");
     }
   ]);
