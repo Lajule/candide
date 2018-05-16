@@ -58,6 +58,10 @@ export function pdf(resume) {
     for (let i = 0; i < resume.experiences.length; ++i) {
       let experience = resume.experiences[i];
 
+      if (i > 0) {
+        pdf.addPage();
+      }
+
       newPage(pdf, experiences.toString());
 
       pdf.setFontType("bold");
@@ -73,10 +77,6 @@ export function pdf(resume) {
       pdf.text(15, 56, experience.description);
 
       pdf.fromHTML(experience.mission, 15, 78, { width: 145 });
-
-      if (i > 0) {
-        pdf.addPage();
-      }
     }
 
     return pdf;
