@@ -30,6 +30,10 @@ balloon-css | CSS tooltips
 
 [Parcel][1] bundler is used to build the application
 
+```sh
+npx parcel build index.html
+```
+
 
 
 
