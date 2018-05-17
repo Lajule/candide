@@ -2,16 +2,16 @@
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
-Pure client side PDF generation built around following Javascript libraries:
+Pure client side application that generate PDF resume. `candide` application is built around following Javascript libraries:
 
-Library | Version
+Library | Purpose
 ------- | -------
-angular | 1.6.10
-angular-translate | 2.17.1
-tinymce | 4.7.11
-flatpickr | 4.4.4
-codemirror | 5.37.0
-jspdf | 1.3.5
+angular | MVW framework
+angular-translate | Translation anular module
+tinymce | WYSIWYG editor
+flatpickr | Powerful datetime picker
+codemirror | Versatile text editor
+jspdf | PDF generation
 
 The application also use these CSS libraries:
 
