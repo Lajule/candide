@@ -28,3 +28,10 @@ balloon-css | CSS tooltips
 
 ## Bundler
 
+[Parcel][1] bundler is used to build the application
+
+
+
+
+
+[1]: https://parceljs.org/ "Parcel"
