@@ -34,8 +34,41 @@ balloon-css | CSS tooltips
 npx parcel build index.html
 ```
 
+## Resources
 
 
+## Development
 
+```sh
+npx parcel index.html
+```
+
+## JSON resume
+
+
+```json
+{
+  "name": "",
+  "title": "",
+  "skills": "",
+  "degrees": [
+    {
+      "school": "",
+      "year": "",
+      "name": ""
+    }
+  ],
+  "experiences": [
+    {
+      "firm": "",
+      "client": "",
+      "from": "",
+      "to": "",
+      "description": "",
+      "mission": ""
+    }
+  ]
+}
+```
 
 [1]: https://parceljs.org/ "Parcel"
