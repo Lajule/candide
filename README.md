@@ -15,9 +15,9 @@ jspdf | PDF generation
 
 The application also use these CSS libraries:
 
-Library | Version
+Library | Purpose
 ------- | -------
-normalize.css | 8.0.0
-milligram | 1.3.0
-font-awesome | 4.7.0
-balloon-css | 0.5.0
+normalize.css | CSS reset
+milligram | Minimalist CSS framework
+font-awesome | Iconic font
+balloon-css | CSS tooltips
