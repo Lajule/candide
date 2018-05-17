@@ -2,6 +2,8 @@
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
+Pure client side PDF generation built around following Javascript libraries:
+
 Library | Version
 ------- | -------
 angular | 1.6.10
@@ -10,6 +12,8 @@ tinymce | 4.7.11
 flatpickr | 4.4.4
 codemirror | 5.37.0
 jspdf | 1.3.5
+
+The application also use these CSS libraries:
 
 Library | Version
 ------- | -------
