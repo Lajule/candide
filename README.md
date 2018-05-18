@@ -70,12 +70,12 @@ npx parcel index.html
   ],
   "experiences": [
     {
-      "firm": "",
-      "client": "",
-      "from": "",
-      "to": "",
-      "description": "",
-      "mission": ""
+      "firm": "The company",
+      "client": "The client",
+      "from": "2000-06",
+      "to": "2010-06",
+      "description": "My first job",
+      "mission": "<p>My first mission</p>"
     }
   ]
 }
