@@ -70,8 +70,8 @@ npx parcel index.html
   ],
   "experiences": [
     {
-      "firm": "The company",
-      "client": "The client",
+      "firm": "My company",
+      "client": "My client",
       "from": "2000-06",
       "to": "2010-06",
       "description": "My first job",
