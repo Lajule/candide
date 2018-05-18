@@ -43,6 +43,10 @@ npx parcel build index.html
 npx parcel index.html
 ```
 
+## Deployment
+
+
+
 ## JSON resume
 
 
