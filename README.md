@@ -6,7 +6,7 @@ Pure client side application that generate PDF resume.
 
 ## Dependencies
 
-`candide` application is built around following Javascript libraries:
+`candide` application is built around following libraries:
 
 Library | Purpose
 ------- | -------
@@ -16,11 +16,6 @@ tinymce | WYSIWYG editor
 flatpickr | Powerful datetime picker
 codemirror | Versatile text editor
 jspdf | PDF generation
-
-The application also use these CSS libraries:
-
-Library | Purpose
-------- | -------
 normalize.css | CSS reset
 milligram | Minimalist CSS framework
 font-awesome | Iconic font
@@ -37,6 +32,7 @@ npx parcel build index.html
 > Several transformations ares applied, Babel transforms ES6 files and PostCSS stylesheets.
 
 ## Resources
+
 
 
 ## Development
