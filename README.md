@@ -28,11 +28,13 @@ balloon-css | CSS tooltips
 
 ## Bundler
 
-[Parcel][1] bundler is used to build the application
+[Parcel][1] bundler is used to build the application, use the following command to bundle all assets (HTML, images, scripts and styles):
 
 ```sh
 npx parcel build index.html
 ```
+
+> Several transformations ares applied, Babel transforms ES6 files and PostCSS stylesheets.
 
 ## Resources
 
