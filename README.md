@@ -55,6 +55,7 @@ npx parcel index.html
 
 ## JSON resume
 
+The application use this JSON model to serialize a resume:
 
 ```json
 {
