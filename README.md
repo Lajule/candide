@@ -58,14 +58,14 @@ npx parcel index.html
 
 ```json
 {
-  "name": "",
-  "title": "",
-  "skills": "",
+  "name": "John Doe",
+  "title": "Programmer",
+  "skills": "<ul><li>C</li><li>C++</li><li>Go</li><li>PHP</li><li>Javascript</li></ul>",
   "degrees": [
     {
-      "school": "",
-      "year": "",
-      "name": ""
+      "school": "Hogwarts",
+      "year": "2000",
+      "name": "<p>Sprawling Scottish castle and celebrated School of Witchcraft and Wizardry</p>"
     }
   ],
   "experiences": [
