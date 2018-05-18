@@ -29,11 +29,11 @@ balloon-css | CSS tooltips
 npx parcel build index.html
 ```
 
-> Several transformations ares applied, Babel transforms ES6 files and PostCSS stylesheets.
-
 ## Resources
 
-
+```sh
+npx shx cp favicon.ico dist
+```
 
 ## Development
 
