@@ -31,8 +31,16 @@ npx parcel build index.html
 
 ## Resources
 
+Some resources have to be copied to `dist` directory, first the favicon must be copied:
+
 ```sh
 npx shx cp favicon.ico dist
+```
+
+`tinymce` editor will not work without a skin, so use this command to get `skins` directory:
+
+```sh
+npx shx cp -R node_modules/tinymce/skins dist
 ```
 
 ## Development
