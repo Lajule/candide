@@ -22,11 +22,12 @@
     "tinymce": "^4.7.11"
   },
   "scripts": {
-    "mkdir": "shx mkdir -p dist",
-    "parcel": "parcel build -d dist index.html",
-    "favicon": "shx cp favicon.ico dist",
-    "skins": "shx cp -R node_modules/tinymce/skins dist",
-    "postinstall": "npm run mkdir && npm run favicon && npm run skins && npm run parcel",
+    "dist": "shx mkdir -p dist",
+    "build": "parcel build -d dist index.html",
+    "resources:favicon": "shx cp favicon.ico dist",
+    "resources:skins": "shx cp -R node_modules/tinymce/skins dist",
+    "resources": "npm run resources:favicon && npm run resources:skins",
+    "postinstall": "npm run dist && npm run build && npm run resources",
     "start": "hs dist"
   }
 }
