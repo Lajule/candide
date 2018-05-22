@@ -8,18 +8,16 @@ Generate your PDF resume.
 
 `candide` is a pure client side application built around following libraries:
 
-Library | Purpose
-------- | -------
-angular | MVW framework
-angular-translate | Translation anular module
-tinymce | WYSIWYG editor
-flatpickr | Powerful datetime picker
-codemirror | Versatile text editor
-jspdf | PDF generation
-normalize.css | CSS reset
-milligram | Minimalist CSS framework
-font-awesome | Iconic font
-balloon-css | CSS tooltips
+**angular** | MVW framework
+**angular-translate** | Translation anular module
+**tinymce** | WYSIWYG editor
+**flatpickr** | Powerful datetime picker
+**codemirror** | Versatile text editor
+**jspdf** | PDF generation
+**normalize.css** | CSS reset
+**milligram** | Minimalist CSS framework
+**font-awesome** | Iconic font
+**balloon-css** | CSS tooltips
 
 ## Build tasks
 
