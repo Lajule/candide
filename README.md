@@ -53,8 +53,8 @@ The application use this JSON model to serialize a resume:
   ],
   "experiences": [
     {
-      "firm": "My company",
-      "client": "My client",
+      "firm": "My first company",
+      "client": "My first client",
       "from": "2000-06",
       "to": "2010-06",
       "description": "My first job",
