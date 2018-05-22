@@ -25,12 +25,13 @@ balloon-css | CSS tooltips
 
 ```json
 {
-  "dist": "shx mkdir -p dist",
-  "build": "parcel build -d dist index.html",
+  "prebuild": "shx mkdir -p dist",
+  "bundle": "parcel build -d dist index.html",
   "resources:favicon": "shx cp favicon.ico dist",
   "resources:skins": "shx cp -R node_modules/tinymce/skins dist",
   "resources": "npm run resources:favicon && npm run resources:skins",
-  "postinstall": "npm run dist && npm run build && npm run resources",
+  "build": "npm run bundle && npm run resources",
+  "postinstall": "npm run build",
   "start": "hs dist"
 }
 ```
