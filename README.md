@@ -23,7 +23,16 @@ balloon-css | CSS tooltips
 
 ## Build tasks
 
-
+```json
+{
+  "mkdir": "shx mkdir -p dist",
+  "parcel": "parcel build -d dist index.html",
+  "favicon": "shx cp favicon.ico dist",
+  "skins": "shx cp -R node_modules/tinymce/skins dist",
+  "postinstall": "npm run mkdir && npm run favicon && npm run skins && npm run parcel",
+  "start": "hs dist"
+}
+```
 
 ## JSON resume
 
