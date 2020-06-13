@@ -38,7 +38,7 @@ balloon-css | CSS tooltips
 
 ## JSON resume
 
-The application use this JSON model to serialize a resume:
+The application uses this JSON model to serialize a resume:
 
 ```json
 {
